@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.hit.dataservice.mapper.CommonMapper">
+    <insert id="addData" parameterType="cn.edu.hit.dataservice.model.Data">
+        INSERT INTO data_storage (type, content) VALUES (#{type}, #{content})
+    </insert>
+    <select id="getDataByType" resultType="cn.edu.hit.dataservice.model.Data">
+        SELECT * FROM data_storage WHERE type = #{type}
+    </select>
+</mapper>
